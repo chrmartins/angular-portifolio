@@ -1,15 +1,24 @@
 :root {
-  --primary: #2fbf71;
+  --primary: #50fa7b;
   --primary-010: #21804d;
-  --primary-gradient: linear-gradient(135deg, var(--primary-010), var(--primary));
 
-  --secondary: #06628a;
-  --secondary-010: #06374e;
+  --secondary: #6272a4;
+  --secondary-010: #44475a;
 
-  --white: #fff;
+  --white: #f8f8f2;
+  --black: #282a36;
+  --black-010: #191a21;
+  --grey: #9ba0af;
 
-  --black: #10101a;
-  --black-010: #2a2a30;
-
-  --grey: #9b9ba0;
+  --primary-gradient: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-010),
+    var(--secondary),
+    var(--secondary-010),
+    var(--white),
+    var(--black),
+    var(--black-010),
+    var(--grey)
+  );
 }
