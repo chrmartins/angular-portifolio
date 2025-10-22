@@ -1,18 +1,44 @@
 <div class="container">
-  <!-- <h2>Projetos desenvolvidos</h2>
+  <h2>Projetos em destaque</h2>
 
-  <ul>
-    @for(item of arrayProjects(); track item){
-    <li>
-      <button (click)="openDialog(item)">
-        <img
-          [src]="item.src"
-          [alt]="item.alt"
-          [attr.width]="item.width"
-          [attr.height]="item.height"
-          loading="lazy" />
+  <nav class="filters" aria-label="Filtros de projetos">
+    @for (category of categories(); track category) {
+      <button
+        type="button"
+        class="btn-filter"
+        [class.btn-filter--active]="isCategorySelected(category)"
+        [attr.aria-pressed]="isCategorySelected(category)"
+        (click)="selectCategory(category)"
+      >
+        {{ category === 'todos' ? 'Todos' : (category | titlecase) }}
       </button>
-    </li>
     }
-  </ul> -->
+  </nav>
+
+  @defer (on viewport) {
+    @if (visibleProjects().length > 0) {
+      <ul class="projects" aria-live="polite">
+        @for (project of visibleProjects(); track project.title) {
+          <li>
+            <button type="button" (click)="openDialog(project)">
+              <img
+                [ngSrc]="project.src"
+                [alt]="project.alt"
+                [width]="project.width"
+                [height]="project.height"
+                loading="lazy"
+              />
+              <span>{{ project.title }}</span>
+            </button>
+          </li>
+        }
+      </ul>
+    } @else {
+      <p class="empty-state">Nenhum projeto encontrado para o filtro selecionado.</p>
+    }
+  } @placeholder {
+    <p class="skeleton">Carregando projetos...</p>
+  } @loading {
+    <p class="skeleton">Preparando projetos atualizados...</p>
+  }
 </div>
