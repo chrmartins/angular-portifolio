@@ -1,67 +1,144 @@
 :host {
-  margin-top: 25px;
+  display: block;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.experiences {
+  padding: 24px 0 16px;
 
-  h2 {
-    text-align: center;
-    margin: 0 0 25px 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
   }
 
-  details {
-    overflow: hidden;
-    margin-top: 10px;
-    background: var(--black-010);
-    border-radius: 7px;
+  &__header {
+    max-width: 720px;
 
-    summary,
-    article {
-      padding: 10px 20px;
-      transition: 0.5s;
+    p {
+      margin-top: 12px;
+      color: rgba(226, 232, 240, 0.76);
     }
+  }
+
+  &__timeline {
+    position: relative;
+    display: grid;
+    gap: 24px;
+    padding-left: 12px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 0;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(99, 102, 241, 0.6) 0%, rgba(14, 165, 233, 0.1) 100%);
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  &__marker {
+    position: absolute;
+    left: -8px;
+    top: 18px;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: var(--primary-gradient);
+  }
+}
+
+.experience-card {
+  transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+
+  summary {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 24px;
+    background: var(--hero-summary-gradient);
+    transition: background 0.35s ease;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    strong {
+      font-size: 1.1rem;
+    }
+
+    span {
+      color: rgba(226, 232, 240, 0.7);
+      font-size: 0.95rem;
+    }
+  }
+
+  &__chevron {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    background: url('../../../../../assets/icons/chevron-down.svg') center/contain no-repeat;
+    filter: invert(1);
+    transition: transform 0.35s ease;
+  }
+
+  article {
+    padding: 0 24px 24px;
+    color: rgba(226, 232, 240, 0.78);
+
+    p {
+      margin: 0 0 12px 0;
+      line-height: 1.6;
+    }
+  }
+
+  &[open] {
+    border-color: rgba(34, 211, 238, 0.55);
+    box-shadow: var(--shadow-glow);
 
     summary {
-      cursor: pointer;
+      background: var(--hero-summary-open-gradient);
+    }
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .experience-card__chevron {
+      transform: rotate(180deg);
+    }
+  }
 
-      background: var(--primary);
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
 
-      p {
-        font-size: 14px;
-        color: var(--black-010);
+@media (max-width: 720px) {
+  .experiences {
+    &__timeline {
+      padding-left: 0;
 
-        padding: 0;
-        margin: 0;
-
-        display: flex;
-        flex-direction: column;
+      &::before {
+        left: 12px;
       }
     }
 
-    &[open] {
-      summary {
-        &::after {
-          content: url("../../../../../assets/icons/chevron-up.svg");
-          margin-top: 5px;
-        }
-
-        border-radius: 7px 7px 0 0;
-      }
+    &__item {
+      padding-left: 44px;
     }
 
-    &:not([open]) {
-      summary {
-        &::after {
-          content: url("../../../../../assets/icons/chevron-down.svg");
-          margin-top: 5px;
-        }
-      }
+    &__marker {
+      left: 4px;
     }
   }
 }

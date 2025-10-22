@@ -1,14 +1,26 @@
-<div class="container">
-  <h2>Últimas Experiências</h2>
-  @for(item of arrayExperiences(); track item){
-    <details>
-      <summary>
-        <p>
-          <strong>{{ item.summary.strong }}</strong>
-          {{ item.summary.p }}
-        </p>
-      </summary>
-      <article [innerHTML]="item.text"></article>
-    </details>
-  }
-</div>
+<section class="experiences">
+  <div class="container">
+    <header class="experiences__header">
+      <h2>Últimas Experiências</h2>
+      <p>Uma jornada construindo produtos digitais de alto impacto, liderando squads e evoluindo design systems.</p>
+    </header>
+
+    <ul class="experiences__timeline">
+      @for(item of arrayExperiences(); track item.summary.strong){
+        <li class="experiences__item">
+          <div class="experiences__marker" aria-hidden="true"></div>
+          <details class="experience-card glass-card">
+            <summary>
+              <div class="experience-card__heading">
+                <strong>{{ item.summary.strong }}</strong>
+                <span>{{ item.summary.p }}</span>
+              </div>
+              <span class="experience-card__chevron" aria-hidden="true"></span>
+            </summary>
+            <article [innerHTML]="item.text"></article>
+          </details>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

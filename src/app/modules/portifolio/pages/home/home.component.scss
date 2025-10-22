@@ -1,10 +1,32 @@
 :host {
-  section {
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+  }
+
+  section.skeleton,
+  section.error,
+  .projects__skeleton,
+  .projects__empty {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 20px 0;
+    padding: 48px 0;
     text-align: center;
+    border-radius: 24px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(99, 102, 241, 0.18);
+    margin: 0 24px;
+  }
+
+  section.skeleton {
+    color: rgba(226, 232, 240, 0.7);
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+
+  section.error {
+    color: #fca5a5;
+    border-color: rgba(252, 165, 165, 0.4);
   }
 }
