@@ -8,23 +8,4 @@
     </section>
   }
 
-  @defer (on viewport; prefetch on idle) {
-    <app-experiences />
-  } @placeholder {
-    <section class="skeleton">
-      <h2>Carregando experiências...</h2>
-    </section>
-  }
-
-  @defer (on viewport) {
-    <app-projects />
-  } @placeholder {
-    <section class="skeleton">
-      <h2>Carregando projetos...</h2>
-    </section>
-  } @error {
-    <section class="error">
-      <h2>Ocorreu um erro ao carregar os projetos...</h2>
-    </section>
-  }
 </main>
