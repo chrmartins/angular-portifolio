@@ -1,11 +1,10 @@
-import { Component, Inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import {
   MAT_DIALOG_DATA,
   MatDialogModule,
   MatDialogRef,
 } from '@angular/material/dialog';
 
-// Interface
 import { IProjects } from '../../../interface/IProjects.interface';
 
 @Component({
@@ -15,19 +14,14 @@ import { IProjects } from '../../../interface/IProjects.interface';
   templateUrl: './dialog-projects.component.html',
   styleUrl: './dialog-projects.component.scss',
 })
-export class DialogProjectsComponent implements OnInit {
-  constructor(
-    private _dialogRef: MatDialogRef<DialogProjectsComponent>,
-    @Inject(MAT_DIALOG_DATA) private _data: IProjects
-  ) {}
+export class DialogProjectsComponent {
+  readonly #dialogRef = inject(MatDialogRef<DialogProjectsComponent>);
+  readonly #data = inject<IProjects>(MAT_DIALOG_DATA);
 
-  public getData = signal<IProjects | null>(null);
+  readonly project = signal<IProjects>(this.#data);
+  readonly hasLinks = computed(() => (this.project().links?.length ?? 0) > 0);
 
-  ngOnInit(): void {
-    this.getData.set(this._data);
-  }
-
-  public closeModal() {
-    return this._dialogRef.close();
+  closeModal() {
+    return this.#dialogRef.close();
   }
 }
