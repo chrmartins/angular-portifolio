@@ -1,24 +1,133 @@
 <section class="knowledge">
   <div class="container">
-    <header class="knowledge__header">
-      <h2>Conhecimentos em destaque</h2>
-      <p>Uma stack moderna para entregar produtos robustos, escaláveis e visualmente incríveis.</p>
-    </header>
-    <ul class="knowledge__grid">
-      @for(item of arrayKnowledge(); track item.name){
-        <li class="knowledge__item glass-card">
-          <span class="knowledge__icon">
-            <img
-              [src]="item.src"
-              [alt]="item.alt"
-              loading="lazy"
-              width="40"
-              height="40"
+    <div class="section-header">
+      <span class="section-tag">Skills</span>
+      <h2 class="section-title">
+        Tecnologias que <span class="gradient-text">domino</span>
+      </h2>
+      <p class="section-description">
+        Stack moderna e ferramentas essenciais para criar produtos digitais de
+        alta qualidade.
+      </p>
+    </div>
+
+    <div class="knowledge-categories">
+      <div class="category">
+        <h3 class="category-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12,2L2,7V10C2,15.55 6.84,20.74 12,22C17.16,20.74 22,15.55 22,10V7L12,2Z"
             />
-          </span>
-          <p>{{ item.name }}</p>
-        </li>
-      }
-    </ul>
+          </svg>
+          Frontend
+        </h3>
+        <div class="skills-grid">
+          @for(item of getFrontendSkills(); track item.name){
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img
+                [src]="item.src"
+                [alt]="item.alt"
+                loading="lazy"
+                width="32"
+                height="32"
+              />
+            </div>
+            <span class="skill-name">{{ item.name }}</span>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div
+                  class="skill-progress"
+                  [style.width.%]="item.level || 90"
+                ></div>
+              </div>
+              <span class="skill-percentage">{{ item.level || 90 }}%</span>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="category">
+        <h3 class="category-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4,6H20L16,10H20L12,20L8,14H12L4,6Z" />
+          </svg>
+          Backend & DevOps
+        </h3>
+        <div class="skills-grid">
+          @for(item of getBackendSkills(); track item.name){
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img
+                [src]="item.src"
+                [alt]="item.alt"
+                loading="lazy"
+                width="32"
+                height="32"
+              />
+            </div>
+            <span class="skill-name">{{ item.name }}</span>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div
+                  class="skill-progress"
+                  [style.width.%]="item.level || 85"
+                ></div>
+              </div>
+              <span class="skill-percentage">{{ item.level || 85 }}%</span>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="knowledge-summary">
+      <div class="summary-card">
+        <div class="summary-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"
+            />
+          </svg>
+        </div>
+        <div class="summary-content">
+          <h4>Front-end Especializado</h4>
+          <p>
+            Next.js, React e Angular para criar interfaces modernas e
+            responsivas
+          </p>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M13,3C13.55,3 14,3.45 14,4V12L15.5,12C16.33,12 17,12.67 17,13.5C17,14.33 16.33,15 15.5,15H8.5C7.67,15 7,14.33 7,13.5C7,12.67 7.67,12 8.5,12L10,12V4C10,3.45 10.45,3 11,3H13Z"
+            />
+          </svg>
+        </div>
+        <div class="summary-content">
+          <h4>Back-end Robusto</h4>
+          <p>Spring Boot e Node.js para APIs escaláveis e performáticas</p>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2ZM21,9V7L15,9.5V6L12,8L9,6V9.5L3,7V9L9,11.5V16H7V18H17V16H15V11.5L21,9Z"
+            />
+          </svg>
+        </div>
+        <div class="summary-content">
+          <h4>Arquitetura & DevOps</h4>
+          <p>Docker, AWS e PostgreSQL para soluções escaláveis</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

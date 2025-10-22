@@ -1,75 +1,59 @@
 <header class="hero">
-  <div class="hero__glow" aria-hidden="true"></div>
-  <div class="container hero__container">
-    <div class="hero__content">
-      <span class="hero__badge">Disponível para novos desafios</span>
-      <h1 class="hero__title">
-        Christian Martins
-        <span>Desenvolvedor Front-end &amp; UI Engineer</span>
-      </h1>
-      <p class="hero__description">
-        Especialista em criar experiências digitais performáticas com Angular 18, Signals e design system escalável.
-        Transformo ideias em produtos encantadores com tecnologia moderna, acessibilidade e animações suaves.
-      </p>
-
-      <ul class="hero__tags" aria-label="Tecnologias de especialidade">
-        <li>Angular 18</li>
-        <li>TypeScript</li>
-        <li>Design Systems</li>
-        <li>Node.js</li>
-      </ul>
-
-      <div class="hero__actions">
-        <a href="assets/pdf/cv.pdf" target="_blank" class="btn btn-primary">
-          Download CV
-        </a>
-        <a href="https://www.linkedin.com/in/chrmartins/" target="_blank" class="btn btn-secondary">
-          Conecte-se no LinkedIn
-        </a>
+  <nav class="navbar">
+    <div class="container navbar__container">
+      <div class="navbar__brand">
+        <span class="brand-initial">CM</span>
+        <span class="brand-text">Christian Martins</span>
       </div>
-
-      <div class="hero__contacts" aria-label="Canais de contato">
-        <a
-          class="hero__contact-card"
-          href="https://api.whatsapp.com/send?phone=5521964627741&amp;text=Ol%C3%A1%20Christian,%20preciso%20de%20um%20job!"
-          target="_blank"
-        >
-          <span class="hero__icon">
-            <img src="assets/icons/whatsapp.svg" alt="Ícone do WhatsApp" width="22" height="24" loading="lazy" />
-          </span>
-          <div>
-            <strong>Vamos conversar?</strong>
-            <p>Whatsapp direto para novos projetos.</p>
-          </div>
-        </a>
-
-        <a class="hero__contact-card" href="mailto:christian@chr3web.com.br" target="_blank">
-          <span class="hero__icon">
-            <img src="assets/icons/mail.svg" alt="Ícone de e-mail" width="22" height="24" loading="lazy" />
-          </span>
-          <div>
-            <strong>Envie um e-mail</strong>
-            <p>christian&#64;chr3web.com.br</p>
-          </div>
-        </a>
+      <div class="navbar__links">
+        <a href="#about" class="nav-link">Sobre</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projetos</a>
+        <a href="#contact" class="nav-link">Contato</a>
       </div>
     </div>
+  </nav>
 
-    <div class="hero__visual">
-      <div class="hero__orb" aria-hidden="true"></div>
-      <div class="hero__image-wrapper">
-        <img
-          src="assets/img/chris.jpg"
-          alt="Christian - foto de perfil"
-          width="280"
-          height="320"
-          loading="eager"
-        />
-      </div>
-      <div class="hero__status-card">
-        <span class="hero__status-dot"></span>
-        Projetos exclusivos com foco em performance e UI moderna.
+  <div class="hero__content">
+    <div class="container">
+      <div class="hero__text">
+        <div class="hero__greeting">
+          <span class="status-indicator"></span>
+          Disponível para projetos
+        </div>
+
+        <h1 class="hero__title">
+          Desenvolvedor
+          <span class="gradient-text">Full Stack</span>
+        </h1>
+
+        <p class="hero__description">
+          Especialista em desenvolvimento completo com Next.js, React e Angular
+          no front-end, Spring Boot no back-end. Criando soluções digitais
+          robustas e escaláveis do conceito à produção.
+        </p>
+
+        <div class="hero__stats">
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Anos de experiência</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projetos entregues</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Satisfação do cliente</span>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="hero__background">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
   </div>
 </header>
