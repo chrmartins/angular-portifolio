@@ -1,16 +1,24 @@
-<div class="container">
-  <h2>Conhecimentos</h2>
-  <ul>
-    @for(item of arrayKnowledge(); track item){
-    <li>
-      <img
-        [src]="item.src"
-        [alt]="item.alt"
-        loading="lazy"
-        width="22px"
-        height="24px"
-      />
-    </li>
-    }
-  </ul>
-</div>
+<section class="knowledge">
+  <div class="container">
+    <header class="knowledge__header">
+      <h2>Conhecimentos em destaque</h2>
+      <p>Uma stack moderna para entregar produtos robustos, escaláveis e visualmente incríveis.</p>
+    </header>
+    <ul class="knowledge__grid">
+      @for(item of arrayKnowledge(); track item.name){
+        <li class="knowledge__item glass-card">
+          <span class="knowledge__icon">
+            <img
+              [src]="item.src"
+              [alt]="item.alt"
+              loading="lazy"
+              width="40"
+              height="40"
+            />
+          </span>
+          <p>{{ item.name }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

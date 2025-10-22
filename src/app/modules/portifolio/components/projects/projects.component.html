@@ -1,44 +1,55 @@
-<div class="container">
-  <h2>Projetos em destaque</h2>
+<section class="projects">
+  <div class="container">
+    <header class="projects__header">
+      <h2>Projetos em destaque</h2>
+      <p>Coleção de experiências criadas com Angular, Signals e foco em performance real.</p>
+    </header>
 
-  <nav class="filters" aria-label="Filtros de projetos">
-    @for (category of categories(); track category) {
-      <button
-        type="button"
-        class="btn-filter"
-        [class.btn-filter--active]="isCategorySelected(category)"
-        [attr.aria-pressed]="isCategorySelected(category)"
-        (click)="selectCategory(category)"
-      >
-        {{ category === 'todos' ? 'Todos' : (category | titlecase) }}
-      </button>
-    }
-  </nav>
+    <nav class="projects__filters" aria-label="Filtros de projetos">
+      @for (category of categories(); track category) {
+        <button
+          type="button"
+          class="projects__filter"
+          [class.projects__filter--active]="isCategorySelected(category)"
+          [attr.aria-pressed]="isCategorySelected(category)"
+          (click)="selectCategory(category)"
+        >
+          {{ category === 'todos' ? 'Todos' : (category | titlecase) }}
+        </button>
+      }
+    </nav>
 
-  @defer (on viewport) {
-    @if (visibleProjects().length > 0) {
-      <ul class="projects" aria-live="polite">
-        @for (project of visibleProjects(); track project.title) {
-          <li>
-            <button type="button" (click)="openDialog(project)">
-              <img
-                [ngSrc]="project.src"
-                [alt]="project.alt"
-                [width]="project.width"
-                [height]="project.height"
-                loading="lazy"
-              />
-              <span>{{ project.title }}</span>
-            </button>
-          </li>
-        }
-      </ul>
-    } @else {
-      <p class="empty-state">Nenhum projeto encontrado para o filtro selecionado.</p>
+    @defer (on viewport) {
+      @if (visibleProjects().length > 0) {
+        <ul class="projects__grid" aria-live="polite">
+          @for (project of visibleProjects(); track project.title) {
+            <li>
+              <button type="button" class="projects__card glass-card" (click)="openDialog(project)">
+                <span class="projects__badge">{{ project.categories.join(' • ') }}</span>
+                <div class="projects__thumb">
+                  <img
+                    [ngSrc]="project.src"
+                    [alt]="project.alt"
+                    [width]="project.width"
+                    [height]="project.height"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="projects__info">
+                  <h3>{{ project.title }}</h3>
+                  <span>Ver detalhes</span>
+                </div>
+              </button>
+            </li>
+          }
+        </ul>
+      } @else {
+        <p class="projects__empty">Nenhum projeto encontrado para o filtro selecionado.</p>
+      }
+    } @placeholder {
+      <p class="projects__skeleton">Carregando projetos...</p>
+    } @loading {
+      <p class="projects__skeleton">Preparando projetos atualizados...</p>
     }
-  } @placeholder {
-    <p class="skeleton">Carregando projetos...</p>
-  } @loading {
-    <p class="skeleton">Preparando projetos atualizados...</p>
-  }
-</div>
+  </div>
+</section>
