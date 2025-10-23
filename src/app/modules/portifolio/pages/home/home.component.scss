@@ -1,4 +1,4 @@
-@import '../../../../../scss/components/sections';
+@import "../../../../../scss/components/sections";
 
 :host {
   display: block;
@@ -15,15 +15,20 @@ main {
 .about-section {
   padding: 8rem 0;
   position: relative;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
   }
 }
 
@@ -64,7 +69,7 @@ main {
   }
 }
 
-@import '../../../../../scss/components/sections';
+@import "../../../../../scss/components/sections";
 
 :host {
   display: block;
@@ -81,15 +86,20 @@ main {
 .about-section {
   padding: 8rem 0;
   position: relative;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
   }
 }
 
@@ -140,15 +150,20 @@ main {
   padding: 8rem 0;
   position: relative;
   background: rgba(0, 0, 0, 0.2);
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
   }
 }
 
@@ -165,7 +180,7 @@ main {
 
   &.featured {
     grid-column: span 2;
-    
+
     @media (max-width: 768px) {
       grid-column: span 1;
     }
@@ -174,7 +189,11 @@ main {
 
 .project-image {
   height: 200px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.1),
+    rgba(168, 85, 247, 0.1)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -232,7 +251,7 @@ main {
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -2px;
     left: 0;
@@ -251,15 +270,20 @@ main {
 .contact-section {
   padding: 8rem 0;
   position: relative;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
   }
 }
 
@@ -428,30 +452,30 @@ main {
   .contact-section {
     padding: 4rem 0;
   }
-  
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .about-card {
     padding: 2rem;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .project-card.featured {
     grid-column: span 1;
   }
-  
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .form {
     padding: 2rem;
   }
@@ -467,15 +491,20 @@ main {
   padding: 8rem 0;
   position: relative;
   background: rgba(0, 0, 0, 0.2);
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
   }
 }
 
@@ -492,7 +521,7 @@ main {
 
   &.featured {
     grid-column: span 2;
-    
+
     @media (max-width: 768px) {
       grid-column: span 1;
     }
@@ -730,7 +759,7 @@ main {
     resize: vertical;
     min-height: 120px;
   }
-}// Footer
+} // Footer
 .footer {
   background: rgba(0, 0, 0, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
