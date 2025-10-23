@@ -1,3 +1,5 @@
+@import '../../../../../scss/components/sections';
+
 :host {
   display: block;
 }
@@ -11,6 +13,7 @@
   background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
 }
 
+// Navbar
 .navbar {
   position: fixed;
   top: 0;
@@ -76,7 +79,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -4px;
     left: 0;
@@ -91,6 +94,7 @@
   }
 }
 
+// Hero Content
 .hero__content {
   flex: 1;
   display: flex;
@@ -147,8 +151,8 @@
 
 .hero__description {
   font-size: 1.25rem;
-  line-height: 1.6;
   color: var(--grey);
+  line-height: 1.6;
   margin-bottom: 3rem;
   max-width: 600px;
   margin-left: auto;
@@ -166,17 +170,12 @@
 }
 
 .stat-item {
+  @extend .card-base;
   text-align: center;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
   }
 }
 
